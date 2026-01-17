@@ -79,6 +79,7 @@ The author assumes no responsibility for misuse or deployment outside legal and 
 License:
 Licensed under the Apache License, Version 2.0.
 See the LICENSE file for full details.
+---
 Hasan Habeeb
 Offensive cybersecurity researcher with extensive hands-on experience in web and API security, GraphQL analysis, and offensive security research, including vulnerability discoveries in large-scale production environments.
 ---
