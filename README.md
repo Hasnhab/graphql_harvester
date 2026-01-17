@@ -40,7 +40,17 @@ Handles malformed or edge-case payloads defensively.
 Normalizes variable keys across statics, runtime data, and UI output.
 Resolves common inconsistencies such as Scale vs scale.
 ---
-Storage & Output Model:
+Output & Storage Model:
+The system implements a dual-storage architecture optimized for security assessment workflows:
+A) ~/graphql_harvester/session.html: 
+Ephemeral (resets on proxy restart)
+No duplicates, current analysis context
+Active testing session analysis
+B) ~/graphql_harvester/repository.html:
+Persistent (survives restarts)
+Complete historical data, all discovered artifacts
+Long-term assessment tracking, pattern analysis.
+Storage Integrity: All data is stored transparently in human-readable HTML/JSON formats with no hidden directories or background persistence mechanisms.
 All outputs are stored explicitly and transparently under:
 ~/graphql_harvester/
 No hidden directories.
@@ -79,6 +89,15 @@ The author assumes no responsibility for misuse or deployment outside legal and 
 License:
 Licensed under the Apache License, Version 2.0.
 See the LICENSE file for full details.
+---
+Usage
+1-Install mitmproxy.
+2-Place the GraphQL Harvester addon in a local directory.
+3-Run mitmproxy with the addon enabled:
+   mitmproxy --listen-host MITM-HOST --listen-port MITM-PORT -s harvester_addon.py
+4-Browse the target application as usual.
+5-Collected artifacts and analysis output will be available under:
+   ~/graphql_harvester/
 ---
 Hasan Habeeb
 Offensive cybersecurity researcher with extensive hands-on experience in web and API security, GraphQL analysis, and offensive security research, including vulnerability discoveries in large-scale production environments.
